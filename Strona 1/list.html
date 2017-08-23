@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<meta charset ="utf-8">
+<body ng-app="myUserList" ng-controller="myCtrl">
+
+<h3>Lista użytkowników</h3>
+<input ng-model="search">
+<br/>
+<label>Płeć:
+	 &#9793; <input type="checkbox" ng-model="checkboxModel.female">
+	 &#9794; <input type="checkbox" ng-model="checkboxModel.male">
+</label>
+<br/>
+<table border="1" width="100%">
+<tr>
+<th ng-click="orderByMe('firstName')">First Name</th>
+<th ng-click="orderByMe('lastName')">Last Name</th>
+<th> Akcje</th>
+</tr>
+<tr ng-hide="hide(u.sex,checkboxModel.female,checkboxModel.male)" ng-class="changeclass(u.sex)" ng-repeat="u in users | filter:search | orderBy:myOrderBy">
+<td>{{u.firstName}}</td>
+<td>{{u.lastName}}</td>
+<td><span ng-click="removeUser($index)">&times;</span></td>
+</tr>
+</table>
+
+</body>
+</html>

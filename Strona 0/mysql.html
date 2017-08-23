@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset ="utf-8">
+<body ng-app="myUserList" ng-controller="myCtrl">
+
+<div class="container" promise-user>
+	<!-- Przerobić na osobne okno -->
+	<div ng-hide="myCheck">	
+		Imię:       <input ng-model="form_newUserMySQL[0]">
+		Nazwisko:   <input ng-model="form_newUserMySQL[1]">
+		<button class="btn btn-primary" ng-click="addUserMySQL(form_newUserMySQL)">Dodaj</button>
+	</div>
+	<!-- -->
+	<div class="btn-group">
+		<button class="btn btn-default">Wyświetl użytkowników z bazy danych</button>	
+		<button ng-click="orderByMe('nic')" class="btn btn-default">Resetuj sortowanie</button>
+	</div>
+	<table promise-reprint class="table" width="100%">
+		<tr>
+			<th ng-hide="true"></th>
+			<th>
+				<label ng-click="orderByMe('firstName')">Imię</label>
+				<span class="sortorder" ng-show="myOrderBy === 'firstName'" ng-class="{reverse: reverse}"></span>
+			</th>
+			<th>
+				<label ng-click="orderByMe('lastName')">Nazwisko</label>
+				<span class="sortorder" ng-show="myOrderBy === 'lastName'" ng-class="{reverse: reverse}"></span>
+			</th>
+			<th>Akcje</th>
+		</tr>
+		<tr ng-repeat="u in users_mysql | orderBy:myOrderBy:reverse" ng-hide="isDeleted(u.id)">
+			<td ng-hide="true">{{u.id}}</td>
+			<td>{{u.firstName}}</td>
+			<td>{{u.lastName}}</td>
+			<td>
+				<button ng-click="editUserMySQL(u.id)" class="btn btn-default">
+					<span class="glyphicon glyphicon-edit"></span>
+				</button>
+				<button ng-click="deleteUserMySQL(u.id)" class="btn btn-danger">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>				
+			</td>
+		</tr>
+	</table><!-- zrobić operacje na danych (edycja, usuń, dodaj) -->
+</div>
+
+</body>
+</html>

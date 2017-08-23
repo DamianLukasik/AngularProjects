@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<meta charset ="utf-8">
+<body ng-app="myUserList" ng-controller="myCtrl">
+<h2>Wyświetl profil</h2>
+
+<select ng-model="selectUser" ng-options="(x.firstName + ' ' + x.lastName) for x in users"></select>
+
+<div ng-class="changeclass(selectUser.sex)">
+<h3>{{selectUser.firstName + " " + selectUser.lastName}}</h3>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<meta charset ="utf-8">
+<body ng-app="myUserList" ng-controller="myCtrl">
+
+<h2>Promise</h2>
+
+<div class="well" promise-worker>
+	<div class="btn-group">
+		<button class="btn btn-primary" data-group="0">Początek</button>
+		<button class="btn btn-primary" data-group="0">Koniec</button>
+		<button class="btn btn-primary" data-group="0">Przerwij</button>
+	</div>
+	<div class="btn-group">
+		<button class="btn btn-primary" data-group="1">Tak</button>
+		<button class="btn btn-primary" data-group="1">Nie</button>
+		<button class="btn btn-primary" data-group="1">Przerwij</button>
+	</div>
+	Wynik: <span promise-observer></span>
+</div>
+
+<div class="well" promise-equation ng-init="equ=''">
+	<input ng-model="equ">
+	<button class="btn btn-primary">Rozwiąż równanie</button>
+	Wynik: <span promise-result></span>
+</div>
+
+</body>
+</html>

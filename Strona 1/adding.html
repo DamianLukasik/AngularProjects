@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<meta charset ="utf-8">
+<body ng-app="myUserList" ng-controller="myCtrl" ng-init="form=['','','']">
+
+<h4>Formularz:</h4>
+<p>Ukryj: <input type="checkbox" ng-model="myCheck"></p>
+<div class="form" ng-hide="myCheck">	
+	Imię:       <input ng-model="form[0]">
+	Nazwisko:   <input ng-model="form[1]">
+	<br>Płeć: 
+	<select ng-model="form[2]" ng-options="x for x in sex">
+	</select><br>
+	<button ng-click="addUser(form)">Dodaj</button>
+	<p>{{message}}</p>
+</div>
+
+</body>
+</html>

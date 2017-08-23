@@ -1,0 +1,30 @@
+.form {
+  transition: all linear 0.5s;
+  background-color: lightblue;
+  height: 130px;
+}
+.ng-hide {
+  height: 0;
+}
+.male{
+  background: lightblue;
+  width: 250px;
+}
+.female{
+  background: plum;
+  width: 250px;
+}
+div.powiadomienie{
+	position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 350px;
+    height: 75px;
+	background: #FFFAF0;
+	box-shadow: -2px 2px 5px #000000;
+	text-align: center;
+	vertical-align: middle;	
+	padding: 15px 25px 15px 25px;
+	margin: 10px 15px 10px 15px;
+	opacity: 0.0;
+}
