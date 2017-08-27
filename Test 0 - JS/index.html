@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset ="utf-8">	
+	<!-- Skrypty -->
+	<script src="include.js"></script>	
+	<script>
+		//object Includes with function importScripts that attaches files js about given paths		
+		Includer.importScripts(['script1.js','script2.js','script3.js','angular.js']);
+		Includer.importLinks(['style.css']);
+	</script>
+	<link href="bootstrap.css" rel="stylesheet" />
+	<link href="bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body class="main">
+<!-- Widok -->
+
+<div class="container">
+  <h2>Panel sterowania</h2>
+  <p>Przetestuj następujące przyciski:</p>
+  <div class="btn-group">
+	<button type="button" class="btn btn-primary" onclick="alert(Text.hi);">Dodaj</button>
+  </div>
+  <br class="gap">
+  <div class="btn-group">
+	<button type="button" class="btn btn-primary" onclick="alert(Text.hi);">Dodaj</button>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+.main {
+	background: #F0F5FF;
+}
+
+.gap { 
+	content: "";
+	margin: 1em;
+	display: block;
+	font-size: 1;
+}
